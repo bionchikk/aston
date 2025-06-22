@@ -21,14 +21,20 @@ public class MyHashSet<E> {
     public void add(E element){
         int index = getIndex(element);
         LinkedList<E> list = lists[index];
-        if(!list.contains(element)){
-            list.add(element);
+        if(list.contains(element)){
+            throw new IllegalArgumentException("Элемент уже есть: " + element);
+
         }
+        list.add(element);
 
     }
 
     public void remove(E element){
         int index = getIndex(element);
+        LinkedList<E> list = lists[index];
+        if (!list.contains(element)) {
+            throw new IllegalArgumentException("Элемент не найден: " + element);
+        }
         lists[index].remove(element);
 
     }
