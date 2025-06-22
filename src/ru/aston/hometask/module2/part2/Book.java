@@ -23,7 +23,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return String.format("%s (%d pages, %d year)", title, pages, year);
+        return String.format("%s (%d страниц, %d год)", title, pages, year);
     }
 
     @Override
